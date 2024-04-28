@@ -1,11 +1,18 @@
 ﻿namespace Lab1.Task1
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            //Comment
+            Task1.Print();
+        }
+    }
+    public class Task1
+    {
+        public static void Print()
+        {
             Console.WriteLine("Hello, World!");
+
         }
     }
 }
