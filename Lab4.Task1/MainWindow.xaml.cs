@@ -45,25 +45,17 @@ namespace Lab4.Task1
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Int32.TryParse(StudentNumberTextBox.Text, out int studentNumber))
+            Student newStudent = new Student()
             {
-                Student newStudent = new Student()
-                {
-                    StudentNumber = studentNumber,
-                    FirstName = FirstNameTextBox.Text,
-                    SecondName = SecondNameTextBox.Text,
-                    LastName = LastNameTextBox.Text,
-                    GroupName = GroupNameTextBox.Text,
-                    Address = AddressTextBox.Text
-                };
-                ResetFields();
-                _studentRepository.CreateStudent(newStudent);
-                LoadStudents();
-            }
-            else
-            {
-                MessageBox.Show("Перевірте валідність даних");
-            }
+                FirstName = FirstNameTextBox.Text,
+                SecondName = SecondNameTextBox.Text,
+                LastName = LastNameTextBox.Text,
+                GroupName = GroupNameTextBox.Text,
+                Address = AddressTextBox.Text
+            };
+            ResetFields();
+            _studentRepository.CreateStudent(newStudent);
+            LoadStudents();
         }
 
         private void ReadButton_Click(object sender, RoutedEventArgs e)
